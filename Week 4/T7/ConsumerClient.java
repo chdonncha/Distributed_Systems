@@ -38,16 +38,28 @@ public class ConsumerClient
 			//Set up stream for keyboard entry...
 			Scanner userEntry = new Scanner(System.in);
 
-			String message, response;
+			String response;
+			char message;
 			do
 			{
 				System.out.print(
 							"Enter message ('QUIT' to exit): ");
-				message =  userEntry.nextLine();
-				networkOutput.println(message);
-				response = networkInput.nextLine();
-				System.out.println("\nSERVER> " + response);
-			}while (!message.equals("QUIT"));
+				message =  userEntry.nextLine().charAt(0);
+
+				if(message != '0' && message != '1')
+				{
+					System.out.println(message);
+					System.out.println("\nPlease choose either 0 or 1");
+					break;
+				}
+				else if(message != '0')
+				{
+					networkOutput.println(message);
+					response = networkInput.nextLine();
+					System.out.println("\nSERVER> " + response);
+				}
+
+			}while (message != ('0'));
 		}
 		catch(IOException ioEx)
 		{
