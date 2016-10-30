@@ -1,0 +1,4 @@
+keystore "raystore";
+grant signedBy "susan" {
+permission java.io.FilePermission "data.txt", "read";
+};

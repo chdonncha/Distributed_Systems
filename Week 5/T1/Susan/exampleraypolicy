@@ -1,0 +1,13 @@
+/* AUTOMATICALLY GENERATED ON Thu Oct 13 12:28:12 BST 2016*/
+/* DO NOT EDIT */
+
+keystore "raystore", "jks";
+
+grant signedBy "susan" {
+  permission java.io.FilePermission "data.txt", "read";
+};
+
+grant signedBy "susan" {
+  permission java.io.FilePermission "C:\\Users\\donncha\\Google Drive\\Work\\DIT\\Year 4\\Distributed Systems\\Week 5\\T1\\Susan\\*", "read";
+};
+
