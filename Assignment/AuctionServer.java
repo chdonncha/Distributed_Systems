@@ -10,6 +10,8 @@ public class AuctionServer implements Runnable
    private Thread       thread = null;
    private int clientCount = 0;
 
+   public String item = "chair";
+
    public AuctionServer(int port)
    {
 	  try {
