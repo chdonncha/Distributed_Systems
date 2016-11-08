@@ -12,15 +12,12 @@ public class AuctionClient implements Runnable
    
    public AuctionClient(String serverName, int serverPort, String name)
    {
-      String item = 'chair';
-
 	  System.out.println("Establishing connection. Please wait ...");
 
 	  this.chatName = name;
       try{
 		 socket = new Socket(serverName, serverPort);
          System.out.println("Connected: " + socket);
-         System.out.println("Current Item on Auction:" + item);
          start();
       }
       catch(UnknownHostException uhe){
