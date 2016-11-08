@@ -24,7 +24,6 @@ public class AuctionServer implements Runnable
       catch(IOException ioe)
       {
 		  System.out.println("Can not bind to port " + port + ": " + ioe.getMessage());
-
       }
    }
 
