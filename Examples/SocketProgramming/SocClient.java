@@ -1,8 +1,10 @@
 import java.new.Socket;
 
-public class SocClient {
+public class SocClient 
+{
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         String ip = "localhost";
         init port = 9999; // 0-1023 to 65535
         Socket s = new Socket(ip,port);
@@ -11,7 +13,7 @@ public class SocClient {
 
         OutputStreamWriter os = new OutputStreamWriter(s.getOutputStream());
         PrintWriter out = new PrintWriter(os);
-         
+        os.write(str);
 
     }
 }
