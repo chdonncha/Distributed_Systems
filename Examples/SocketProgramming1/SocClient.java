@@ -17,5 +17,10 @@ public class SocClient
         out.println(str);
         os.flush();
 
+        BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
+        String nickName = br.readLine();
+
+        System.out.println("C: Data from the Server" + nickName);
+
     }
 }

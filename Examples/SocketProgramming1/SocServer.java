@@ -24,6 +24,6 @@ public class SocServer
         PrintWriter out = new PrintWriter(os);
         out.println(nickName);
         out.flush();
-        System.out.println("Data sent from Server to Client");
+        System.out.println("S: Data sent from Server to Client");
     }    
 }
