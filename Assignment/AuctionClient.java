@@ -62,6 +62,7 @@ public class AuctionClient implements Runnable
         String auctionItem = console.readLine();
         System.out.println("C: Data from the Server: " + auctionItem);
 
+      // must be kept on or the client is dropped after one message
       streamOut = new DataOutputStream(socket.getOutputStream());
       if (thread == null)
       {  client = new AuctionClientThread(this, socket);
