@@ -8,14 +8,22 @@ public class SocServer
         System.out.println("Server is started");
         ServerSocket ss = new ServerSocket(9999);
 
-        System.out.println("Server is waiting for client request");
+        System.out.println("S: Server is waiting for client request");
         Socket s = ss.accept();
 
-        System.out.println("Client Accepted");
+        System.out.println("S: Client Accepted");
 
         BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
         String str = br.readLine();
 
-        System.out.println("Client Data : " + str);
+        System.out.println("S: Client Data : " + str);
+
+        String nickName = str.substring(0, 3);
+
+        OutputStreamWriter os = new OutputStreamWriter(s.getOutputStream());
+        PrintWriter out = new PrintWriter(os);
+        out.println(nickName);
+        out.flush();
+        System.out.println("Data sent from Server to Client");
     }    
 }
