@@ -41,7 +41,7 @@ public class AuctionServerThread extends Thread
 	  thread = new Thread(this);
       while (true){
 		 try{
-			 server.broadcast(ID, streamIn.readUTF());
+			 server.broadcast(streamIn.readUTF());
 
          	 int pause = (int)(Math.random()*3000);
 		 	 Thread.sleep(pause);

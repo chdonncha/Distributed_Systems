@@ -72,20 +72,21 @@ public class AuctionServer implements Runnable
    }
 
    // take the user input and send to all users
-   public synchronized void broadcast(int ID, String input)
+   public synchronized void broadcast(String input)
    {
      
      // printout input sent from client
      System.out.println("C: " + input);
 
-	   if (input.equals(".bye")){
-		  clients[findClient(ID)].send(".bye");
-          remove(ID);
-       }
-       else
+	  //  if (input.equals(".bye")){
+		//   clients[findClient(ID)].send(".bye");
+    //       remove(ID);
+    //    }
+    //    else
          for (int i = 0; i < clientCount; i++){
-			if(clients[i].getID() != ID)
-            	clients[i].send(ID + ": " + input); // sends messages to clients
+      // broadcast to everyone but the user it was sent from
+			//if(clients[i].getID() != ID)
+            	clients[i].send(input); // sends messages to clients
 		}
        notifyAll();
    }
@@ -119,11 +120,15 @@ public class AuctionServer implements Runnable
 	  if (clientCount < clients.length){
 
 		 System.out.println("Client accepted: " + socket);
-         clients[clientCount] = new AuctionServerThread(this, socket);
+         //clients[clientCount] = new AuctionServerThread(this, socket);
+         AuctionServerThread client = new AuctionServerThread(this, socket);
          try{
-			clients[clientCount].open();
-            clients[clientCount].start();
+			client.open();
+            client.start();
+            broadcast("item for auction: chair");
+            clients[clientCount] = client;
             clientCount++;
+
          }
          catch(IOException ioe){
 			 System.out.println("Error opening thread: " + ioe);
