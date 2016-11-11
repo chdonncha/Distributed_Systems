@@ -1,4 +1,6 @@
-import java.new.Socket;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.Socket;
 
 public class SocClient 
 {
@@ -14,6 +16,7 @@ public class SocClient
         OutputStreamWriter os = new OutputStreamWriter(s.getOutputStream());
         PrintWriter out = new PrintWriter(os);
         os.write(str);
+        os.flush();
 
     }
 }
