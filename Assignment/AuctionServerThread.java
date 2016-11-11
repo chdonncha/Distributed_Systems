@@ -35,14 +35,6 @@ public class AuctionServerThread extends Thread
 	   return ID;
    }
 
-   public void test() throws Exception {
-        OutputStreamWriter os = new OutputStreamWriter(socket.getOutputStream());
-        PrintWriter out = new PrintWriter(os);
-        String str = "Donncha Cassidy";
-        out.println(str);
-        os.flush();
-   }
-
    public void run()
    {
 	  System.out.println("Server Thread " + ID + " running.");

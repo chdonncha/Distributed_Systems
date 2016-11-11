@@ -59,16 +59,16 @@ public class AuctionClient implements Runnable
 	  console = new BufferedReader(new InputStreamReader(System.in));
 
         //BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        String auctionItem = console.readLine();
-        System.out.println("C: Data from the Server: " + auctionItem);
+      //   String auctionItem = br.readLine();
+      //   System.out.println("C: Data from the Server: " + auctionItem);
 
 
-      // streamOut = new DataOutputStream(socket.getOutputStream());
-      // if (thread == null)
-      // {  client = new AuctionClientThread(this, socket);
-      //    thread = new Thread(this);
-      //    thread.start();
-      // }
+      streamOut = new DataOutputStream(socket.getOutputStream());
+      if (thread == null)
+      {  client = new AuctionClientThread(this, socket);
+         thread = new Thread(this);
+         thread.start();
+      }
    }
 
    public void stop()
