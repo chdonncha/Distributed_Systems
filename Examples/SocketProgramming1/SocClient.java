@@ -1,6 +1,5 @@
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.net.Socket;
+import java.net.*;
+import java.io.*;
 
 public class SocClient 
 {
