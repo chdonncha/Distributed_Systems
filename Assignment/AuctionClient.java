@@ -33,8 +33,8 @@ public class AuctionClient implements Runnable
    {
 	   while (thread != null){
 		 try {
-			//String message = chatName + " > " + console.readLine();
 			String message = console.readLine();
+                  //String message = "gravy";
 			streamOut.writeUTF(message);
             streamOut.flush();
          }
@@ -57,11 +57,12 @@ public class AuctionClient implements Runnable
    public void start() throws IOException
    {
 	  console = new BufferedReader(new InputStreamReader(System.in));
-
         //BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String auctionItem = console.readLine();
         System.out.println("C: Data from the Server: " + auctionItem);
-
+      
+        String item2 = console.readLine();
+        System.out.println("C: Data from the Server: " + item2);
       // must be kept on or the client is dropped after one message
       streamOut = new DataOutputStream(socket.getOutputStream());
       if (thread == null)
