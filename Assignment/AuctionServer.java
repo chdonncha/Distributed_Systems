@@ -74,7 +74,7 @@ public class AuctionServer implements Runnable
    // take the user input and send to all users
    public synchronized void broadcast(int ID, String input)
    {
-     input = "gravy";
+     
      // printout input sent from client
      System.out.println("C: " + input);
 

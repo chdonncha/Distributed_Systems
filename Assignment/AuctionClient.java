@@ -21,6 +21,8 @@ public class AuctionClient implements Runnable
 		 socket = new Socket(serverName, serverPort);
          System.out.println("Connected: " + socket);
          start();
+	streamOut.writeUTF("New User Connect: " + name);
+      streamOut.flush();
       }
       catch(UnknownHostException uhe){
 		  System.out.println("Host unknown: " + uhe.getMessage());
@@ -35,7 +37,6 @@ public class AuctionClient implements Runnable
 	   while (thread != null){
 		 try {
 			String message = console.readLine();
-                  //String message = "gravy";
 			streamOut.writeUTF(message);
             streamOut.flush();
          }
@@ -62,8 +63,6 @@ public class AuctionClient implements Runnable
       
       // must be kept on or the client is dropped after one message
       streamOut = new DataOutputStream(socket.getOutputStream());
-       String streamOut = console.readLine();
-        System.out.println("C: Data from the Server: " + streamOut);
       if (thread == null)
       {  client = new AuctionClientThread(this, socket);
          thread = new Thread(this);
