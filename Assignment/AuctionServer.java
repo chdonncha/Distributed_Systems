@@ -29,6 +29,8 @@ public class AuctionServer implements Runnable
 
    public void run()
    {
+     displayItem();
+
 	  while (thread != null)
       {
 		 try{
@@ -134,10 +136,10 @@ public class AuctionServer implements Runnable
 		 System.out.println("Client accepted: " + socket);
          //clients[clientCount] = new AuctionServerThread(this, socket);
          AuctionServerThread client = new AuctionServerThread(this, socket);
-         try{     
+         try{    
 			client.open();
+      broadcast("item for auction: chair");
             client.start();
-            broadcast("item for auction: chair");
             clients[clientCount] = client;
             clientCount++;
          }
