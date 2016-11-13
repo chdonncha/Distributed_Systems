@@ -17,7 +17,7 @@ public class AuctionServer implements Runnable
 	  try {
 
 		 System.out.println("Binding to port " + port + ", please wait  ...");
-         server = new ServerSocket(port);
+       server = new ServerSocket(port);
          System.out.println("Server started: " + server.getInetAddress());
          start();
       }
@@ -50,6 +50,18 @@ public class AuctionServer implements Runnable
       }
    }
 
+  public void displayItem() {
+    System.out.println("display item");
+    try {
+      while(true) {
+        System.out.println("test");
+        Thread.sleep(5 * 1000);
+      }
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
+
   public void start()
     {
 		if (thread == null) {
@@ -76,7 +88,7 @@ public class AuctionServer implements Runnable
    {
      
      // printout input sent from client
-     System.out.println("C: " + input);
+     //System.out.println("C: " + input);
 
 	  //  if (input.equals(".bye")){
 		//   clients[findClient(ID)].send(".bye");
@@ -122,13 +134,12 @@ public class AuctionServer implements Runnable
 		 System.out.println("Client accepted: " + socket);
          //clients[clientCount] = new AuctionServerThread(this, socket);
          AuctionServerThread client = new AuctionServerThread(this, socket);
-         try{
+         try{     
 			client.open();
             client.start();
             broadcast("item for auction: chair");
             clients[clientCount] = client;
             clientCount++;
-
          }
          catch(IOException ioe){
 			 System.out.println("Error opening thread: " + ioe);
