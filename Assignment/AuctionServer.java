@@ -29,15 +29,13 @@ public class AuctionServer implements Runnable
 
    public void run()
    {
-     displayItem();
-
 	  while (thread != null)
       {
 		 try{
 
 			System.out.println("Waiting for a client ...");
             addThread(server.accept());
-
+            displayItem();
 			int pause = (int)(Math.random()*3000);
 			Thread.sleep(pause);
 
@@ -49,14 +47,13 @@ public class AuctionServer implements Runnable
          catch (InterruptedException e){
 		 	System.out.println(e);
 		 }
-      }
+    }
    }
 
   public void displayItem() {
-    System.out.println("display item");
     try {
       while(true) {
-        System.out.println("test");
+        broadcast("item for auction: chair");
         Thread.sleep(5 * 1000);
       }
     } catch (InterruptedException e) {
