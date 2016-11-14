@@ -35,7 +35,7 @@ public class AuctionServer implements Runnable
 
 			System.out.println("Waiting for a client ...");
             addThread(server.accept());
-            displayItem();
+            readFromFile();
 			int pause = (int)(Math.random()*3000);
 			Thread.sleep(pause);
 
@@ -50,7 +50,7 @@ public class AuctionServer implements Runnable
     }
    }
 
-  public void readFromFile() {
+  public String readFromFile() {
         try {
             File file = new File("items.txt");       
             FileReader filereader = new FileReader(file);
@@ -60,17 +60,18 @@ public class AuctionServer implements Runnable
                 String[] words = line.split(" ");
                 System.out.println(line);
             }
+          return line;
         }catch(Exception e){
             System.out.println("Exception: " + e);
         }
+      displayItem(line);
    }
 
-  public void displayItem() {
-    readFromFile();
+  public void displayItem(String line) {
 
     try {
       while(true) {
-        broadcast("item for auction: chair");
+        broadcast("item for auction: " + line);
         Thread.sleep(5 * 1000);
       }
     } catch (InterruptedException e) {
