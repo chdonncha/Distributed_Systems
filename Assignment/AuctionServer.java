@@ -74,8 +74,8 @@ public class AuctionServer implements Runnable {
         // loop for every element in ArrayList
         for (String s : list) {
           System.out.println(s);
-          // wait for 5 seconds
-          Thread.sleep(5 * 1000);
+          // wait for 60 seconds
+          Thread.sleep(60 * 1000);
           // broad current item for auction to all users
           broadcast("item for auction: " + s);
         }
@@ -112,11 +112,25 @@ public class AuctionServer implements Runnable {
     //       remove(ID);
     //    }
     //    else
-    for (int i = 0; i < clientCount; i++) {
-      // broadcast to everyone but the user it was sent from
-      // if(clients[i].getID() != ID)
-      clients[i].send(input); // sends messages to clients
-    }
+
+    // known error will only execute once, for only one user
+
+    if (input.equals(".ShowItems")) {
+      ArrayList<String> list = new ArrayList<String>();
+      list = readFromFile();
+      for (int i = 0; i < clientCount; i++) {
+        clients[i].send("\n All the items up for auction today: \n");
+        for (String s : list) {
+          clients[i].send(s);
+        }
+      }
+      // clients[findClient(ID)].send(".bye");
+    } else
+      for (int i = 0; i < clientCount; i++) {
+        // broadcast to everyone but the user it was sent from
+        // if(clients[i].getID() != ID)
+        clients[i].send(input); // sends messages to clients
+      }
     notifyAll();
   }
   public synchronized void remove(int ID) {
