@@ -59,11 +59,6 @@ public class AuctionServer implements Runnable {
         words = line.split(" ");
         list.addAll(Arrays.asList(line));
       }
-
-      // for (String s : list) {
-      //   System.out.println(s);
-      // }
-
     } catch (Exception e) {
       System.out.println("Exception: " + e);
     }
@@ -73,6 +68,8 @@ public class AuctionServer implements Runnable {
   public void displayItem() {
     // String[] item = readFromFile();
     readFromFile();
+    ArrayList<String> list = new ArrayList<String>();
+    list = readFromFile();
 
     for (String s : list) {
       System.out.println(s);
@@ -80,8 +77,8 @@ public class AuctionServer implements Runnable {
 
     try {
       while (true) {
-        broadcast("item for auction: ");
         Thread.sleep(5 * 1000);
+        broadcast("item for auction: ");
       }
     } catch (InterruptedException e) {
       e.printStackTrace();

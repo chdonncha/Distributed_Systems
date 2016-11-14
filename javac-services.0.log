@@ -1,6 +1,4 @@
-INFO	?	main	2016-11-14T12:27:19.351Z	org.javacs.Main#connectToNode	Connected to parent using socket on port 55282
-INFO	?	main	2016-11-14T12:27:19.865Z	org.javacs.JavaLanguageServer#doLint	Lint [c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java]
-SEVERE	?	main	2016-11-14T12:27:30.898Z	org.javacs.Main$4#onError	Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java
+SEVERE	?	main	2016-11-14T12:49:41.971Z	org.javacs.Main$4#onError	Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java
 org.javacs.NoJavaConfigException: Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java
 	at org.javacs.JavaLanguageServer.lambda$findCompiler$21(JavaLanguageServer.java:479)
 	at java.util.Optional.orElseThrow(Optional.java:290)
@@ -25,8 +23,7 @@ org.javacs.NoJavaConfigException: Can't find configuration file for c:\Users\don
 	at org.javacs.Main.run(Main.java:150)
 	at org.javacs.Main.main(Main.java:69)
 
-INFO	?	main	2016-11-14T12:27:36.418Z	org.javacs.JavaLanguageServer#doLint	Lint [c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java]
-SEVERE	?	main	2016-11-14T12:27:40.398Z	org.javacs.Main$4#onError	Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java
+SEVERE	?	main	2016-11-14T12:49:44.098Z	org.javacs.Main$4#onError	Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java
 org.javacs.NoJavaConfigException: Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java
 	at org.javacs.JavaLanguageServer.lambda$findCompiler$21(JavaLanguageServer.java:479)
 	at java.util.Optional.orElseThrow(Optional.java:290)
@@ -51,108 +48,3 @@ org.javacs.NoJavaConfigException: Can't find configuration file for c:\Users\don
 	at org.javacs.Main.run(Main.java:150)
 	at org.javacs.Main.main(Main.java:69)
 
-INFO	?	main	2016-11-14T12:27:43.497Z	org.javacs.JavaLanguageServer#doLint	Lint [c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java]
-SEVERE	?	main	2016-11-14T12:28:11.550Z	org.javacs.Main$4#onError	Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java
-org.javacs.NoJavaConfigException: Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java
-	at org.javacs.JavaLanguageServer.lambda$findCompiler$21(JavaLanguageServer.java:479)
-	at java.util.Optional.orElseThrow(Optional.java:290)
-	at org.javacs.JavaLanguageServer.findCompiler(JavaLanguageServer.java:479)
-	at org.javacs.JavaLanguageServer.findTree(JavaLanguageServer.java:809)
-	at org.javacs.JavaLanguageServer.lambda$doHover$34(JavaLanguageServer.java:983)
-	at java.util.Optional.ifPresent(Optional.java:159)
-	at org.javacs.JavaLanguageServer.doHover(JavaLanguageServer.java:982)
-	at org.javacs.JavaLanguageServer.access$000(JavaLanguageServer.java:31)
-	at org.javacs.JavaLanguageServer$1.hover(JavaLanguageServer.java:118)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint._doAccept(LanguageServerEndpoint.xtend:130)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.doAccept(LanguageServerEndpoint.xtend:117)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend:114)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.handleMessage(LanguageEndpoint.xtend:67)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.lambda$connect$4(LanguageEndpoint.xtend:61)
-	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:46)
-	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:44)
-	at io.typefox.lsapi.services.json.StreamMessageReader.handleMessage(StreamMessageReader.xtend:128)
-	at io.typefox.lsapi.services.json.StreamMessageReader.listen(StreamMessageReader.xtend:61)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.connect(LanguageEndpoint.xtend:60)
-	at org.javacs.Main.run(Main.java:150)
-	at org.javacs.Main.main(Main.java:69)
-
-INFO	?	main	2016-11-14T12:28:15.195Z	org.javacs.JavaLanguageServer#doLint	Lint [c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Examples\ReadingFromFile\Main.java]
-INFO	?	main	2016-11-14T12:28:20.189Z	org.javacs.JavaLanguageServer#doLint	Lint [c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java, c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Examples\ReadingFromFile\Main.java]
-INFO	?	main	2016-11-14T12:28:23.475Z	org.javacs.JavaLanguageServer#doLint	Lint [c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServerThread.java]
-SEVERE	?	main	2016-11-14T12:28:39.583Z	org.javacs.Main$4#onError	Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServerThread.java
-org.javacs.NoJavaConfigException: Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServerThread.java
-	at org.javacs.JavaLanguageServer.lambda$findCompiler$21(JavaLanguageServer.java:479)
-	at java.util.Optional.orElseThrow(Optional.java:290)
-	at org.javacs.JavaLanguageServer.findCompiler(JavaLanguageServer.java:479)
-	at org.javacs.JavaLanguageServer.findTree(JavaLanguageServer.java:809)
-	at org.javacs.JavaLanguageServer.lambda$doHover$34(JavaLanguageServer.java:983)
-	at java.util.Optional.ifPresent(Optional.java:159)
-	at org.javacs.JavaLanguageServer.doHover(JavaLanguageServer.java:982)
-	at org.javacs.JavaLanguageServer.access$000(JavaLanguageServer.java:31)
-	at org.javacs.JavaLanguageServer$1.hover(JavaLanguageServer.java:118)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint._doAccept(LanguageServerEndpoint.xtend:130)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.doAccept(LanguageServerEndpoint.xtend:117)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend:114)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.handleMessage(LanguageEndpoint.xtend:67)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.lambda$connect$4(LanguageEndpoint.xtend:61)
-	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:46)
-	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:44)
-	at io.typefox.lsapi.services.json.StreamMessageReader.handleMessage(StreamMessageReader.xtend:128)
-	at io.typefox.lsapi.services.json.StreamMessageReader.listen(StreamMessageReader.xtend:61)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.connect(LanguageEndpoint.xtend:60)
-	at org.javacs.Main.run(Main.java:150)
-	at org.javacs.Main.main(Main.java:69)
-
-SEVERE	?	main	2016-11-14T12:28:42.338Z	org.javacs.Main$4#onError	Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServerThread.java
-org.javacs.NoJavaConfigException: Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServerThread.java
-	at org.javacs.JavaLanguageServer.lambda$findCompiler$21(JavaLanguageServer.java:479)
-	at java.util.Optional.orElseThrow(Optional.java:290)
-	at org.javacs.JavaLanguageServer.findCompiler(JavaLanguageServer.java:479)
-	at org.javacs.JavaLanguageServer.findTree(JavaLanguageServer.java:809)
-	at org.javacs.JavaLanguageServer.lambda$doHover$34(JavaLanguageServer.java:983)
-	at java.util.Optional.ifPresent(Optional.java:159)
-	at org.javacs.JavaLanguageServer.doHover(JavaLanguageServer.java:982)
-	at org.javacs.JavaLanguageServer.access$000(JavaLanguageServer.java:31)
-	at org.javacs.JavaLanguageServer$1.hover(JavaLanguageServer.java:118)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint._doAccept(LanguageServerEndpoint.xtend:130)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.doAccept(LanguageServerEndpoint.xtend:117)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend:114)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.handleMessage(LanguageEndpoint.xtend:67)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.lambda$connect$4(LanguageEndpoint.xtend:61)
-	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:46)
-	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:44)
-	at io.typefox.lsapi.services.json.StreamMessageReader.handleMessage(StreamMessageReader.xtend:128)
-	at io.typefox.lsapi.services.json.StreamMessageReader.listen(StreamMessageReader.xtend:61)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.connect(LanguageEndpoint.xtend:60)
-	at org.javacs.Main.run(Main.java:150)
-	at org.javacs.Main.main(Main.java:69)
-
-SEVERE	?	main	2016-11-14T12:28:51.777Z	org.javacs.Main$4#onError	Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServerThread.java
-org.javacs.NoJavaConfigException: Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServerThread.java
-	at org.javacs.JavaLanguageServer.lambda$findCompiler$21(JavaLanguageServer.java:479)
-	at java.util.Optional.orElseThrow(Optional.java:290)
-	at org.javacs.JavaLanguageServer.findCompiler(JavaLanguageServer.java:479)
-	at org.javacs.JavaLanguageServer.findTree(JavaLanguageServer.java:809)
-	at org.javacs.JavaLanguageServer.lambda$doHover$34(JavaLanguageServer.java:983)
-	at java.util.Optional.ifPresent(Optional.java:159)
-	at org.javacs.JavaLanguageServer.doHover(JavaLanguageServer.java:982)
-	at org.javacs.JavaLanguageServer.access$000(JavaLanguageServer.java:31)
-	at org.javacs.JavaLanguageServer$1.hover(JavaLanguageServer.java:118)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint._doAccept(LanguageServerEndpoint.xtend:130)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.doAccept(LanguageServerEndpoint.xtend:117)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend:114)
-	at io.typefox.lsapi.services.transport.server.LanguageServerEndpoint.accept(LanguageServerEndpoint.xtend)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.handleMessage(LanguageEndpoint.xtend:67)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.lambda$connect$4(LanguageEndpoint.xtend:61)
-	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:46)
-	at io.typefox.lsapi.services.json.StreamMessageReader$1.apply(StreamMessageReader.java:44)
-	at io.typefox.lsapi.services.json.StreamMessageReader.handleMessage(StreamMessageReader.xtend:128)
-	at io.typefox.lsapi.services.json.StreamMessageReader.listen(StreamMessageReader.xtend:61)
-	at io.typefox.lsapi.services.transport.AbstractLanguageEndpoint.connect(LanguageEndpoint.xtend:60)
-	at org.javacs.Main.run(Main.java:150)
-	at org.javacs.Main.main(Main.java:69)
-
-INFO	?	main	2016-11-14T12:29:01.957Z	org.javacs.JavaLanguageServer#doLint	Lint [c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java, c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServerThread.java, c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Examples\ReadingFromFile\Main.java]
