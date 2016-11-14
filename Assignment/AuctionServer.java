@@ -65,19 +65,20 @@ public class AuctionServer implements Runnable {
   }
 
   public void displayItem() {
-    // String[] item = readFromFile();
     readFromFile();
     ArrayList<String> list = new ArrayList<String>();
     list = readFromFile();
 
-    for (String s : list) {
-      System.out.println(s);
-    }
-
     try {
       while (true) {
-        Thread.sleep(5 * 1000);
-        broadcast("item for auction: ");
+        // loop for every element in ArrayList
+        for (String s : list) {
+          System.out.println(s);
+          // wait for 5 seconds
+          Thread.sleep(5 * 1000);
+          // broad current item for auction to all users
+          broadcast("item for auction: " + s);
+        }
       }
     } catch (InterruptedException e) {
       e.printStackTrace();
