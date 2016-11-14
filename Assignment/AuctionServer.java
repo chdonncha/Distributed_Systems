@@ -1,6 +1,7 @@
 import java.net.*;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class AuctionServer implements Runnable
 {
@@ -54,7 +55,7 @@ public class AuctionServer implements Runnable
   public void readFromFile() {
       String line = "test";
       String[] words = {"test"};
-      List<String> list = new ArrayList<String>();
+      ArrayList<String> list = new ArrayList<String>();
 
         try {
             File file = new File("items.txt");       
@@ -63,14 +64,19 @@ public class AuctionServer implements Runnable
 
             while((line = br.readLine()) != null) {
                 words = line.split(" ");
-                list.add(words);
-                //System.out.println(line);
+                list.addAll( Arrays.asList(line));
             }
+          
+            for (String s : list) {
+              System.out.println(s);
+            }
+
             
         }catch(Exception e){
             System.out.println("Exception: " + e);
-        }   
-        System.out.println(words[0]);
+        }  
+        //System.out.println(Arrays.toString(list));
+        //System.out.println(words[0]);
       //System.out.println("read from file" + words);
       //return words;
    }
