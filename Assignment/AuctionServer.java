@@ -46,17 +46,16 @@ public class AuctionServer implements Runnable {
   }
 
   public ArrayList<String> readFromFile() {
-    String line = "test";
-    String[] words = {"test"};
+
     ArrayList<String> list = new ArrayList<String>();
 
     try {
       File file = new File("items.txt");
       FileReader filereader = new FileReader(file);
       BufferedReader br = new BufferedReader(filereader);
-
+      String line;
       while ((line = br.readLine()) != null) {
-        words = line.split(" ");
+        String[] words = line.split(" ");
         list.addAll(Arrays.asList(line));
       }
     } catch (Exception e) {
