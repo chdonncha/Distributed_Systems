@@ -114,8 +114,19 @@ public class AuctionServer implements Runnable {
     //    else
 
     // known error will only execute once, for only one user
+    String[] cmds = {"-- ShowItems", "-- ShowCurrentItem"};
+    String[] cmdDesc = {"Shows all items on auction",
+                        "Shows current item for auction"};
 
-    if (input.equals(".ShowItems")) {
+    if (input.equals("-- Help")) {
+      for (int i = 0; i < clientCount; i++) {
+        for (int j = 0; j < cmds.length; j++) {
+          clients[i].send(cmds[j] + "\t\t" + cmdDesc[j]);
+        }
+      }
+    }
+
+    if (input.equals("-- ShowItems")) {
       ArrayList<String> list = new ArrayList<String>();
       list = readFromFile();
       for (int i = 0; i < clientCount; i++) {
@@ -124,14 +135,21 @@ public class AuctionServer implements Runnable {
           clients[i].send(s);
         }
       }
-      // clients[findClient(ID)].send(".bye");
-    } else
-      for (int i = 0; i < clientCount; i++) {
-        // broadcast to everyone but the user it was sent from
-        // if(clients[i].getID() != ID)
-        clients[i].send(input); // sends messages to clients
+    }
+
+      if (input.equals("/bid " + "1")) {
+        for (int i = 0; i < cmds.length; i++) {
+          clients[i].send("user has bid 1");
+        }
       }
-    notifyAll();
+      // clients[findClient(ID)].send(".bye");
+    // } else
+    //   for (int i = 0; i < clientCount; i++) {
+    //     // broadcast to everyone but the user it was sent from
+    //     // if(clients[i].getID() != ID)
+    //     clients[i].send(input); // sends messages to clients
+    //   }
+     notifyAll();
   }
   public synchronized void remove(int ID) {
     int pos = findClient(ID);
