@@ -35,7 +35,7 @@ public class AuctionServer implements Runnable
 
 			System.out.println("Waiting for a client ...");
             addThread(server.accept());
-            readFromFile();
+            displayItem();
 			int pause = (int)(Math.random()*3000);
 			Thread.sleep(pause);
 
@@ -50,28 +50,36 @@ public class AuctionServer implements Runnable
     }
    }
 
-  public String readFromFile() {
+  public void readFromFile() {
+      String line = "test";
+      String[] words = {"test"};
+
         try {
             File file = new File("items.txt");       
             FileReader filereader = new FileReader(file);
             BufferedReader br = new BufferedReader(filereader);
-            String line;
+
             while((line = br.readLine()) != null) {
-                String[] words = line.split(" ");
-                System.out.println(line);
+                words = line.split(" ");
+                System.out.println(words);
             }
-          return line;
+            for (int i = 0; i < words.length; i++) {
+              words[i] = words[i].replaceAll("[^\\w]", "");
+            }
+            
         }catch(Exception e){
             System.out.println("Exception: " + e);
-        }
-      displayItem(line);
+        }   
+      //System.out.println("read from file" + words);
+      //return words;
    }
 
-  public void displayItem(String line) {
+  public void displayItem() {
+    //String[] item = readFromFile();
 
     try {
       while(true) {
-        broadcast("item for auction: " + line);
+        broadcast("item for auction: ");
         Thread.sleep(5 * 1000);
       }
     } catch (InterruptedException e) {
