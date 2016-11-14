@@ -12,21 +12,6 @@ public class AuctionServer implements Runnable
 
    public String item = "chair";
 
-   public void readFromFile() {
-        try {
-            File file = new File("items.txt");       
-            FileReader filereader = new FileReader(file);
-            BufferedReader br = new BufferedReader(filereader);
-            String line;
-            while((line = br.readLine()) != null) {
-                String[] words = line.split(" ");
-                System.out.println(line);
-            }
-        }catch(Exception e){
-            System.out.println("Exception: " + e);
-        }
-   }
-
    public AuctionServer(int port)
    {
 	  try {
@@ -65,7 +50,24 @@ public class AuctionServer implements Runnable
     }
    }
 
+  public void readFromFile() {
+        try {
+            File file = new File("items.txt");       
+            FileReader filereader = new FileReader(file);
+            BufferedReader br = new BufferedReader(filereader);
+            String line;
+            while((line = br.readLine()) != null) {
+                String[] words = line.split(" ");
+                System.out.println(line);
+            }
+        }catch(Exception e){
+            System.out.println("Exception: " + e);
+        }
+   }
+
   public void displayItem() {
+    readFromFile();
+
     try {
       while(true) {
         broadcast("item for auction: chair");
