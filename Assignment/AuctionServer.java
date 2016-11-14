@@ -2,15 +2,30 @@ import java.net.*;
 import java.io.*;
 
 public class AuctionServer implements Runnable
-{  
-   
-   // Array of clients	
+{
+
+   // Array of clients
    private AuctionServerThread clients[] = new AuctionServerThread[50];
    private ServerSocket server = null;
    private Thread       thread = null;
    private int clientCount = 0;
 
    public String item = "chair";
+
+   public void readFromFile() {
+        try {
+            File file = new File("items.txt");       
+            FileReader filereader = new FileReader(file);
+            BufferedReader br = new BufferedReader(filereader);
+            String line;
+            while((line = br.readLine()) != null) {
+                String[] words = line.split(" ");
+                System.out.println(line);
+            }
+        }catch(Exception e){
+            System.out.println("Exception: " + e);
+        }
+   }
 
    public AuctionServer(int port)
    {
@@ -85,7 +100,7 @@ public class AuctionServer implements Runnable
    // take the user input and send to all users
    public synchronized void broadcast(String input)
    {
-     
+
      // printout input sent from client
      //System.out.println("C: " + input);
 
@@ -133,7 +148,7 @@ public class AuctionServer implements Runnable
 		 System.out.println("Client accepted: " + socket);
          //clients[clientCount] = new AuctionServerThread(this, socket);
          AuctionServerThread client = new AuctionServerThread(this, socket);
-         try{    
+         try{
 			client.open();
       broadcast("item for auction: chair");
             client.start();
