@@ -52,7 +52,7 @@ public class AuctionServer implements Runnable
     }
    }
 
-  public void readFromFile() {
+  public ArrayList<String> readFromFile() {
       String line = "test";
       String[] words = {"test"};
       ArrayList<String> list = new ArrayList<String>();
@@ -67,23 +67,23 @@ public class AuctionServer implements Runnable
                 list.addAll( Arrays.asList(line));
             }
           
-            for (String s : list) {
-              System.out.println(s);
-            }
+            // for (String s : list) {
+            //   System.out.println(s);
+            // }
 
-            
         }catch(Exception e){
             System.out.println("Exception: " + e);
         }  
-        //System.out.println(Arrays.toString(list));
-        //System.out.println(words[0]);
-      //System.out.println("read from file" + words);
-      //return words;
+      return list;
    }
 
   public void displayItem() {
     //String[] item = readFromFile();
     readFromFile();
+
+    for (String s : list) {
+      System.out.println(s);
+    }
 
     try {
       while(true) {
