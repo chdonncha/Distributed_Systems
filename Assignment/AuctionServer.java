@@ -73,7 +73,7 @@ public class AuctionServer implements Runnable {
       while (true) {
         // loop for every element in ArrayList
         for (String s : list) {
-          //System.out.println(s);
+          // System.out.println(s);
           // wait for 60 seconds
           Thread.sleep(60 * 1000);
           // broad current item for auction to all users
@@ -138,21 +138,17 @@ public class AuctionServer implements Runnable {
       }
     }
 
-    String subBid = bid.substring(0,4);
+    String subBid = bid.substring(0, 4);
 
-      if (input.equals(subBid = "/bid")) {
-        for (int i = 0; i < clientCount; i++) {
-          clients[i].send("user has bid 1");
-        }
+    if (input.equals(subBid = "/bid")) {
+      for (int i = 0; i < clientCount; i++) {
+        String amount = bid.substring(5, input.length());
+        System.out.println(amount);
+        clients[i].send("user has bid 1");
       }
-      // clients[findClient(ID)].send(".bye");
-    // } else
-    //   for (int i = 0; i < clientCount; i++) {
-    //     // broadcast to everyone but the user it was sent from
-    //     // if(clients[i].getID() != ID)
-    //     clients[i].send(input); // sends messages to clients
-    //   }
-     notifyAll();
+    }
+
+    notifyAll();
   }
   public synchronized void remove(int ID) {
     int pos = findClient(ID);
