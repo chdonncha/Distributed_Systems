@@ -10,6 +10,7 @@ public class AuctionServer implements Runnable {
   private ServerSocket server = null;
   private Thread thread = null;
   private int clientCount = 0;
+  public int highestBid = 0;
 
   public String item = "chair";
 
@@ -129,13 +130,21 @@ public class AuctionServer implements Runnable {
     }
 
     String subBid = input.substring(0, 4);
-    int highestBid;
 
     if (subBid.equals(bid)) {
       for (int i = 0; i < clientCount; i++) {
         String amount = input.substring(5, input.length());
-        highestBid = Integer.parseInt(amount);
-        System.out.println(highestBid);
+        int value = Integer.parseInt(amount);
+        System.out.println(value);
+        if (highestBid < value) {
+          highestBid = value;
+          System.out.println(value);
+          clients[i].send("new highest bid has been set at: " + highestBid);
+        } else {
+          clients[i].send(
+              "Bid value not greater than the current highest bid of: " +
+              highestBid);
+        }
       }
     }
 
