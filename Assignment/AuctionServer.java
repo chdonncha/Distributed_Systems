@@ -73,7 +73,7 @@ public class AuctionServer implements Runnable {
       while (true) {
         // loop for every element in ArrayList
         for (String s : list) {
-          System.out.println(s);
+          //System.out.println(s);
           // wait for 60 seconds
           Thread.sleep(60 * 1000);
           // broad current item for auction to all users
@@ -117,6 +117,7 @@ public class AuctionServer implements Runnable {
     String[] cmds = {"-- ShowItems", "-- ShowCurrentItem"};
     String[] cmdDesc = {"Shows all items on auction",
                         "Shows current item for auction"};
+    String bid = "/bid";
 
     if (input.equals("-- Help")) {
       for (int i = 0; i < clientCount; i++) {
@@ -137,7 +138,7 @@ public class AuctionServer implements Runnable {
       }
     }
 
-      if (input.equals("/bid " + "1")) {
+      if (input.equals(bid.substring(0,4) == "/bid")) {
         for (int i = 0; i < cmds.length; i++) {
           clients[i].send("user has bid 1");
         }
