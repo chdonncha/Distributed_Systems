@@ -129,16 +129,19 @@ public class AuctionServer implements Runnable {
     }
 
     String subBid = input.substring(0, 4);
+    int highestBid;
 
     if (subBid.equals(bid)) {
       for (int i = 0; i < clientCount; i++) {
         String amount = input.substring(5, input.length());
-        System.out.println(amount);
+        highestBid = Integer.parseInt(amount);
+        System.out.println(highestBid);
       }
     }
 
     notifyAll();
   }
+
   public synchronized void remove(int ID) {
     int pos = findClient(ID);
     if (pos >= 0) {
