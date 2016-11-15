@@ -142,8 +142,8 @@ public class AuctionServer implements Runnable {
 
     if (subBid.equals(bid)) {
       for (int i = 0; i < clientCount; i++) {
-        // String amount = bid.substring(5, input.length());
-        // System.out.println(amount);
+        String amount = bid.substring(5, input.length());
+        System.out.println(amount);
         clients[i].send("user has bid 1");
       }
     }
