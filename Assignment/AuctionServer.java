@@ -104,16 +104,6 @@ public class AuctionServer implements Runnable {
   // take the user input and send to all users
   public synchronized void broadcast(String input) {
 
-    // printout input sent from client
-    // System.out.println("C: " + input);
-
-    //  if (input.equals(".bye")){
-    //   clients[findClient(ID)].send(".bye");
-    //       remove(ID);
-    //    }
-    //    else
-
-    // known error will only execute once, for only one user
     String[] cmds = {"-- ShowItems", "-- ShowCurrentItem"};
     String[] cmdDesc = {"Shows all items on auction",
                         "Shows current item for auction"};
@@ -142,9 +132,8 @@ public class AuctionServer implements Runnable {
 
     if (subBid.equals(bid)) {
       for (int i = 0; i < clientCount; i++) {
-        String amount = bid.substring(5, input.length());
+        String amount = input.substring(5, input.length());
         System.out.println(amount);
-        clients[i].send("user has bid 1");
       }
     }
 
