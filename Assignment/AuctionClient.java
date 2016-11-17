@@ -95,8 +95,12 @@ public class AuctionClient implements Runnable {
     }
     
     private void userBidOnItem(String amount){
-        int amountInt = Integer.parseInt(amount);
-        userBidOnItem(amountInt);
+        try{
+            int amountInt = Integer.parseInt(amount);
+            userBidOnItem(amountInt);
+        } catch (Exception e) {
+            System.out.println("invalid command - please enter bid amount");
+        }
     }
     
     private void userBidOnItem(int amount){
