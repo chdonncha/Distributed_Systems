@@ -25,3 +25,5 @@ org.javacs.NoJavaConfigException: Can't find configuration file for c:\Users\don
 	at org.javacs.Main.run(Main.java:150)
 	at org.javacs.Main.main(Main.java:69)
 
+INFO	?	main	2016-11-17T01:10:40.830Z	org.javacs.JavaLanguageServer#doLint	Lint [c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionClient.java]
+INFO	?	main	2016-11-17T01:10:46.578Z	org.javacs.JavaLanguageServer#doLint	Lint [c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionClient.java, c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java]

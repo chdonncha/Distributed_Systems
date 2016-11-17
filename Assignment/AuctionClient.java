@@ -144,10 +144,6 @@ public class AuctionClient implements Runnable {
             thread.start();
         }
     }
-
-    public void Hello(){
-        System.out.println("hello");
-    }
     
     public void stop() {
         try {
