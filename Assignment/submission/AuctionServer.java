@@ -263,6 +263,7 @@ public class AuctionServer implements Runnable {
                 client.start();
                 clients[clientCount] = client;
                 clientCount++;
+                userRequestCurrentAuctionItem(client.getID());
             } catch (IOException ioe) {
                 System.out.println("Error opening thread: " + ioe);
             }

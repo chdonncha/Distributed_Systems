@@ -78,41 +78,50 @@ public class AuctionClient implements Runnable {
         System.out.println("Invalid Command: " + command);
     }
     
+    // displays the current item on auction
     private void requestCurrentItem(){
         try{
             streamOut.writeInt(ServerCommands.REQUEST_CURRENT_AUCTION);
+            streamOut.flush();
         }catch(IOException ex){
             System.out.println("Could not request current item");
         }
     }
     
+    // displays a list of all the items that will be on auction
     private void requestAllItems(){
         try{
             streamOut.writeInt(ServerCommands.REQUEST_ALL_AUCTIONS);
+            streamOut.flush();
         }catch(IOException ex){
             System.out.println("Could not request all items");
         }
     }
     
+    // parses the amount bid on an item from a string to an int
     private void userBidOnItem(String amount){
         try{
             int amountInt = Integer.parseInt(amount);
             userBidOnItem(amountInt);
-        } catch (Exception e) {
+        // if the amount isn't an integer than the exception will be caught
+        } catch (Exception ex) {
             System.out.println("invalid command - please enter bid amount");
         }
     }
     
+    // handles a user bidding on an item
     private void userBidOnItem(int amount){
         try {
             streamOut.writeInt(ServerCommands.USER_BID);
             streamOut.writeUTF(chatName);
             streamOut.writeInt(amount);
+                        streamOut.flush();
         } catch (IOException ex) {
             System.out.println("Could not send user bid command");
         }
     }
-    
+
+    // handle a user connection to server
     private void userConnectedToServer(){
         try {
             streamOut.writeInt(ServerCommands.USER_CONNECTED);
@@ -127,7 +136,7 @@ public class AuctionClient implements Runnable {
         String[] cmds = {"/bid <amount>", "/displayAll", "/displayCurrent"};
         String[] cmdDesc = {"Place a bid on the current item for auction", 
                             "Shows all items on auction",
-                            "Shows current item for auction"};
+                            "Shows current item for auction" + "\n"};
         for(int i = 0; i < cmds.length; i++){
             System.out.println(cmds[i] + "\t\t" + cmdDesc[i]);
         }

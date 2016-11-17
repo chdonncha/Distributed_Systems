@@ -1,4 +1,4 @@
 @ECHO off
-mode con: cols=62 lines=40
+rem Usage: java AuctionServer port 
 java AuctionServer 8888
 pause
