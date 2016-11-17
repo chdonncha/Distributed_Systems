@@ -49,22 +49,22 @@ public class AuctionClient implements Runnable {
 
     private void processUserInput(String commandInput) {    
         // take users input and compare against available commmands
-        // the commands are added as part of the extra functionality required 
+        // added as part of the required extra functionality
         String[] userCommand = commandInput.split(" ");
             switch(userCommand[0]){
-                // displays current item for auction
+                // displays current item on auction
                 case "/displayCurrent":
                     requestCurrentItem();
                     break;
-                // displays all items up for auction
+                // displays list of all auction items
                 case "/displayAll":
                     requestAllItems();
                     break;
-                // displays the list of available commands
+                // displays a list of all the available commands
                 case "/help":
                     displayHelp();
                     break;
-                // bid <amount> allows the user to place their bid
+                // bid <amount> allows user to place their bid
                 case "/bid":
                     if(userCommand.length != 2){
                         System.out.println("Bid takes 2 arguments");
@@ -137,7 +137,6 @@ public class AuctionClient implements Runnable {
         }
     }
 
-    // displays a list of avilable commands
     private void displayHelp() {
         String[] cmds = {"/bid <amount>", "/displayAll", "/displayCurrent"};
         String[] cmdDesc = {"Place a bid on the current item for auction", 
@@ -145,6 +144,15 @@ public class AuctionClient implements Runnable {
                             "Shows current item for auction" + "\n"};
         for(int i = 0; i < cmds.length; i++){
             System.out.println(cmds[i] + "\t\t" + cmdDesc[i]);
+        }
+    }
+
+    public void handle(String msg) {
+        if (msg.equals(".bye")) {
+            System.out.println("Good bye. Press RETURN to exit ...");
+            stop();
+        } else {
+            System.out.println(msg);
         }
     }
 
