@@ -1,3 +1,8 @@
+/*
+    References:
+    * The AuctionServerThread was started using the basis of the Chatserver lab code
+*/
+
 import java.net.*;
 import java.io.*;
 

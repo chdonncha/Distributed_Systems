@@ -1,3 +1,8 @@
+/*
+    References:
+    * The AuctionServer was started using the basis of the Chatserver lab code
+*/
+
 import java.net.*;
 import java.io.*;
 import java.util.ArrayList;

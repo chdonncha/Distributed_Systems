@@ -1,3 +1,8 @@
+/*
+    References:
+    * The AuctionClient was started using the basis of the Chatserver lab code
+*/
+
 import java.net.*;
 import java.io.*;
 
@@ -21,8 +26,7 @@ public class AuctionClient implements Runnable {
             System.out.println("Connected: " + socket);
             start();
             userConnectedToServer();
-          //  streamOut.writeUTF("New User Connect: " + name);
-           // streamOut.flush();
+
         } catch (UnknownHostException uhe) {
             System.out.println("Host unknown: " + uhe.getMessage());
         } catch (IOException ioe) {
@@ -35,8 +39,7 @@ public class AuctionClient implements Runnable {
             try {
                 String message = console.readLine();
                 processUserInput(message);
-                // streamOut.writeUTF(message);
-                //   streamOut.flush();
+
             } catch (IOException ioe) {
                 System.out.println("Sending error: " + ioe.getMessage());
                 stop();
@@ -44,7 +47,8 @@ public class AuctionClient implements Runnable {
         }
     }
 
-    private void processUserInput(String commandInput) {      
+    private void processUserInput(String commandInput) {    
+        // take users input and compare against available commmands  
         String[] userCommand = commandInput.split(" ");
             switch(userCommand[0]){
                 case "/displayCurrent":
@@ -63,6 +67,7 @@ public class AuctionClient implements Runnable {
                     String bidAmount = userCommand[1];
                     userBidOnItem(bidAmount);
                     break;
+                // if the input does not match any of the above commands let the user know it's invalid
                 default:
                     invalidCommand(userCommand[0]);
                     break;
@@ -115,9 +120,10 @@ public class AuctionClient implements Runnable {
     }
 
     private void displayHelp() {
-        String[] cmds = {"-- ShowItems", "-- ShowCurrentItem"};
-        String[] cmdDesc = {"Shows all items on auction",
-            "Shows current item for auction"};
+        String[] cmds = {"/bid <amount>", "/displayAll", "/displayCurrent"};
+        String[] cmdDesc = {"Place a bid on the current item for auction", 
+                            "Shows all items on auction",
+                            "Shows current item for auction"};
         for(int i = 0; i < cmds.length; i++){
             System.out.println(cmds[i] + "\t\t" + cmdDesc[i]);
         }
@@ -134,7 +140,6 @@ public class AuctionClient implements Runnable {
 
     public void start() throws IOException {
         console = new BufferedReader(new InputStreamReader(System.in));
-        //BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
         // must be kept on or the client is dropped after one message
         streamOut = new DataOutputStream(socket.getOutputStream());

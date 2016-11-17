@@ -1,7 +1,5 @@
-INFO	?	main	2016-11-16T22:04:34.562Z	org.javacs.Main#connectToNode	Connected to parent using socket on port 55282
-INFO	?	main	2016-11-16T22:04:36.430Z	org.javacs.JavaLanguageServer#doLint	Lint [c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java]
-SEVERE	?	main	2016-11-16T22:48:15.358Z	org.javacs.Main$4#onError	Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java
-org.javacs.NoJavaConfigException: Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java
+SEVERE	?	main	2016-11-17T01:23:16.180Z	org.javacs.Main$4#onError	Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionClient.java
+org.javacs.NoJavaConfigException: Can't find configuration file for c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionClient.java
 	at org.javacs.JavaLanguageServer.lambda$findCompiler$21(JavaLanguageServer.java:479)
 	at java.util.Optional.orElseThrow(Optional.java:290)
 	at org.javacs.JavaLanguageServer.findCompiler(JavaLanguageServer.java:479)
@@ -25,5 +23,3 @@ org.javacs.NoJavaConfigException: Can't find configuration file for c:\Users\don
 	at org.javacs.Main.run(Main.java:150)
 	at org.javacs.Main.main(Main.java:69)
 
-INFO	?	main	2016-11-17T01:10:40.830Z	org.javacs.JavaLanguageServer#doLint	Lint [c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionClient.java]
-INFO	?	main	2016-11-17T01:10:46.578Z	org.javacs.JavaLanguageServer#doLint	Lint [c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionClient.java, c:\Users\donncha\Google Drive\Work\DIT\Year 4\Distributed Systems\Assignment\AuctionServer.java]
