@@ -48,18 +48,23 @@ public class AuctionClient implements Runnable {
     }
 
     private void processUserInput(String commandInput) {    
-        // take users input and compare against available commmands  
+        // take users input and compare against available commmands
+        // the commands are added as part of the extra functionality required 
         String[] userCommand = commandInput.split(" ");
             switch(userCommand[0]){
+                // displays current item for auction
                 case "/displayCurrent":
                     requestCurrentItem();
                     break;
+                // displays all items up for auction
                 case "/displayAll":
                     requestAllItems();
                     break;
+                // displays the list of available commands
                 case "/help":
                     displayHelp();
                     break;
+                // bid <amount> allows the user to place their bid
                 case "/bid":
                     if(userCommand.length != 2){
                         System.out.println("Bid takes 2 arguments");
@@ -132,6 +137,7 @@ public class AuctionClient implements Runnable {
         }
     }
 
+    // displays a list of avilable commands
     private void displayHelp() {
         String[] cmds = {"/bid <amount>", "/displayAll", "/displayCurrent"};
         String[] cmdDesc = {"Place a bid on the current item for auction", 
@@ -139,15 +145,6 @@ public class AuctionClient implements Runnable {
                             "Shows current item for auction" + "\n"};
         for(int i = 0; i < cmds.length; i++){
             System.out.println(cmds[i] + "\t\t" + cmdDesc[i]);
-        }
-    }
-
-    public void handle(String msg) {
-        if (msg.equals(".bye")) {
-            System.out.println("Good bye. Press RETURN to exit ...");
-            stop();
-        } else {
-            System.out.println(msg);
         }
     }
 
